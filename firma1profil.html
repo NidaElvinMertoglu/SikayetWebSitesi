@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="stil.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300&display=swap" rel="stylesheet">
+    <title>Şikayet Var Firma</title>
+</head>
+<body>
+  <div class="arkaPlan"></div>
+  <nav id=mainbar class="navbar navbar-expand-lg navbar-light navbar-custom">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Şikayetim Var</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Anasayfa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="firma.html">Şikayetler</a>
+          </li>
+          
+          <li class="nav-item dropdown" id="girisSonrasi" style="display: none;">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Profilim
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="profilim.html">Profil Bilgilerimi Görüntüle</a>
+                <a class="dropdown-item" href="sikayetliste.html">Şikayetlerim</a>
+                <a class="dropdown-item" href="sikayetgir.html">Şikayet Yaz</a>
+                <a class="dropdown-item" href="#" onclick="logOut()">Çıkış Yap</a>
+            </div>
+        </li>
+        
+        <li class="nav-item dropdown" id="girisSonrasiSirket" style="display: none;">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Profilim
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="samsungprofil.html">Profil Bilgilerimi Görüntüle</a>
+              <a class="dropdown-item" href="firmasayfa.html">Şikayetler</a>
+              <a class="dropdown-item" href="#" onclick="logOut()">Çıkış Yap</a>
+          </div>
+      </li>
+          
+          <li class="nav-item" id="uyeHarici">
+            <a class="nav-link" href="login.html">Üye Ol/Giriş Yap</a>
+          </li>
+          <li class="nav-item">
+            <form class="form-inline" id="searchForm" > 
+              <input class="form-control mr-sm-2" type="search" id="searchInput" placeholder="Marka Model Ürün Ara" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="searchButton" onclick="aramaYap(event)">Ara</button>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <h1 style="padding: 20px;"></h1>
+    <h2>Firma Bilgileri</h2>
+
+  <div class="container">
+    <h1 id="companyTitle">Şikayetler - [Firma Adı]</h1>
+    <ul id="complaintsList" class="list-group">
+    </ul>
+</div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script src="script.js"></script>
+    <script>
+      window.onload = function() {
+          navigationBar();
+          const params = new URLSearchParams(window.location.search);
+          const company = params.get('company');
+
+          if (company) {
+            document.getElementById('companyTitle').innerText = `Şikayetler - ${company}`;
+            showCompanyComplaints(company);
+        } else {
+            alert('Firma adı bulunamadı.');
+        }
+    };
+
+function loadComplaints() {
+    const storedComplaints = JSON.parse(localStorage.getItem('complaints'));
+    return storedComplaints || {};
+}
+  </script>
+</body>
+</html>

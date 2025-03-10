@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Şikayet Var</title>
+  <link rel="stylesheet" href="stil.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300&display=swap" rel="stylesheet">
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      overflow-x: hidden;
+    }
+    header{
+      width: 100vw;
+      height: 100vh;
+      background-image: url('mainimg.jpg') ;
+      background-position: bottom;
+      background-size: cover;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .header-content{
+      margin-bottom: 150px;
+      color: #fff;
+      text-align: center;
+    }
+    .header-content h2{
+      font-size: 4vmin;
+      color: whitesmoke;
+      font-family: 'DM Serif Display', serif
+    }
+    .header-content h1{
+      font-size: 10vmin;
+      margin-top: 100px;
+      margin-bottom: 120px;
+      color: whitesmoke;
+      font-family: 'DM Serif Display', serif;
+    }
+    .line{
+      width: 150px;
+      height: 4px;
+      background: blanchedalmond;
+      margin: 20px auto;
+      border-radius: 5px;
+    }
+    .ctn{
+      padding: 8px 15px;
+      background: whitesmoke;
+      border-radius: 30px;
+      color: black;
+      font-family: 'DM Serif Display', serif;
+    }
+    section{
+      width: 80%;
+      margin: 80px auto;
+    }
+    .title{
+      text-align: center;
+      font-size: 4vmin;
+      color: rgb(69, 69, 196);
+    }
+    .title h4{
+      color: rgb(7, 180, 151);
+      font-family:  'DM Serif Display', serif;     
+
+    }
+    
+    .row{
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: space-between;
+    }
+    
+
+    .row .col .insan{
+      width: 80%;
+    }
+    
+    .row .col .marka{
+      width: 110%;
+    }
+    .title p{
+      font-size: 3vh;
+      font-family: 'DM Serif Display', serif;
+      
+    }
+    .sitenasilcalisir .col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .sitenasilcalisir p {
+  
+    font-size: 3vh; 
+    color: #333; 
+    margin-top: 10px;
+    font-family: 'DM Serif Display', serif;
+    }
+    .sitenasilcalisir .img{
+      display: flex;
+      
+    }
+    .imgtek img{
+      width: 500px;
+    }
+    .baslik{
+      margin-bottom: 20px auto;
+      font-size: 5vh;
+      font-family: 'DM Serif Display', serif;
+      color: #333; 
+    }
+    .sitenasilcalisir .cizgi{
+      width: 150px;
+      height: 4px;
+      background: blanchedalmond;
+      margin: 20px auto;
+      border-radius: 5px;
+    }
+    .anasayfaicerik {
+      margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="arkaPlan"></div>
+
+  <nav id=mainbar class="navbar navbar-expand-lg navbar-light navbar-custom">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Şikayetim Var</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Anasayfa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="firma.html">Şikayetler</a>
+          </li>
+          
+          <li class="nav-item dropdown" id="girisSonrasi" style="display: none;">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Profilim
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="profilim.html">Profil Bilgilerimi Görüntüle</a>
+                <a class="dropdown-item" href="sikayetliste.html">Şikayetlerim</a>
+                <a class="dropdown-item" href="sikayetgir.html">Şikayet Yaz</a>
+                <a class="dropdown-item" href="#" onclick="logOut()">Çıkış Yap</a>
+            </div>
+        </li>
+        <!-- Firma giriş yapıldığında gösterilecek -->
+        <li class="nav-item dropdown" id="girisSonrasiSirket" style="display: none;">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Profilim
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="samsungprofil.html">Profil Bilgilerimi Görüntüle</a>
+              <a class="dropdown-item" href="firmasayfa.html">Şikayetler</a>
+              <a class="dropdown-item" href="#" onclick="logOut()">Çıkış Yap</a>
+          </div>
+      </li>
+          
+          <li class="nav-item" id="uyeHarici">
+            <a class="nav-link" href="login.html">Üye Ol/Giriş Yap</a>
+          </li>
+          <li class="nav-item">
+            <form class="form-inline" id="searchForm" > 
+              <input class="form-control mr-sm-2" type="search" id="searchInput" placeholder="Marka Model Ürün Ara" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="searchButton" onclick="aramaYap(event)">Ara</button>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="anasayfaicerik">
+      <header>
+        <div class="header-content">
+            <h1>ŞİKAYETİM VAR</h1>
+            <h2>Şikayetiniz mi var? Hemen çözüm bulalım.</h2>
+            <div class="line"></div>
+            <a href="#" class="ctn">Tek tıkla şikayetiniz çözüme kavuşsun</a>
+        </div>
+        
+      </header>
+    <section class="site">
+          <div class="title">
+            <h1>Sitemizin Özellikleri</h1>
+            <div class="line"></div>
+            <div class="row">
+              <div class="col">
+                <img class="insan" src="insan.jpg" alt="insanlar">
+                <h4>Milyonlarca Ziyaretçi</h4>
+                <p>Yılda milyonlarca ziyaretçimizin bir sürü şikayeti ilgili şirketle iletişime geçilerek kolayca çözüme kavuşuyor.</p>
+                <a href="login.html" class="ctn">Daha fazlası için tıklayın</a> 
+              </div>
+              <div class="col">
+                <img class="marka" src="brand.jpg" alt="marka">
+                <h4>Milyonlarca Marka</h4>
+                <p>Firma sahipleri müşterilerinden gelen şikayetlere göre firmalarını geliştiriyor ve şikayetlere kolayca çözüm üretip müşterilerini mağdur bırakmıyorlar.</p>
+                <a href="login.html" class="ctn">Daha fazlası için tıklayın</a> 
+              </div>
+            </div>
+          </div>
+    </section>
+    <section class="sitenasilcalisir">
+      <div class="row">
+        <div class="col">
+          <div class="baslik">Sitemiz Nasıl Çalışır?</div>
+          <div class="cizgi"></div>
+          <p>Çözüm ve karar verme aracı olan sitemiz, ilgili firmalarla yaşadığınız sorunlar sonucu olan şikayetlerinize ilgili firmalar tarafından cevap almanıza yardımcı olur.</p>
+          <a href="login.html" class="ctn">Daha fazlası için tıklayın</a>
+        </div>
+        <div class="col">
+          <div class="imgtek">
+            <img src="solution.jpg" alt="sitecalisma">
+            
+          </div>
+          
+          
+        </div>
+      </div>
+    </section>
+  </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script src="script.js"></script>
+    <script>
+      window.onload = function() {
+        navigationBar();
+      };
+      </script>
+
+</body>
+</html>
